@@ -1,4 +1,4 @@
-﻿using CRUDServiceContracts;
+﻿using ServiceContracts;
 using DTO;
 using OfficeOpenXml;
 using System;
@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CRUDServices
+namespace Services
 {
     public class PersonGetterServiceWithFewExcelFields : IPersonGetterService
     {

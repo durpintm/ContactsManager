@@ -1,11 +1,11 @@
-﻿using CRUDServiceContracts;
+﻿using ServiceContracts;
 using DTO;
 using Entities;
 using Microsoft.AspNetCore.Http;
 using OfficeOpenXml;
 using RepositoryContracts;
 
-namespace CRUDServices
+namespace Services
 {
     public class CountryService : ICountryService
     {

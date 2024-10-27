@@ -1,13 +1,13 @@
-﻿using CRUDExample.Filters.ActionFilters;
-using CRUDServiceContracts;
-using CRUDServices;
+﻿using Filters.ActionFilters;
+using ServiceContracts;
+using Services;
 using DatabaseContext;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
 using RepositoryContracts;
 
-namespace CRUDExample
+namespace ServicesExtensions
 {
     public static class ConfigureServicesExtension
     {

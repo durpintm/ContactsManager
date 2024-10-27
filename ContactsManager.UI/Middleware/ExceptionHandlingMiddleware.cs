@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
-using Serilog;
-using System.Threading.Tasks;
+﻿using Serilog;
 
-namespace CRUDExample.Middleware
+namespace Middleware
 {
     public class ExceptionHandlingMiddleware
     {

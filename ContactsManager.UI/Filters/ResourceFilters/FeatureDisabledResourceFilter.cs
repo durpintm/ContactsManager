@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace CRUDExample.Filters.ResourceFilters
+namespace Filters.ResourceFilters
 {
     public class FeatureDisabledResourceFilter : IAsyncResourceFilter
     {

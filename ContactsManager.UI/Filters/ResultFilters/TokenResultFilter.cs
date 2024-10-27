@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace CRUDExample.Filters.ResultFilters
+namespace Filters.ResultFilters
 {
     public class TokenResultFilter : IAsyncResultFilter
     {

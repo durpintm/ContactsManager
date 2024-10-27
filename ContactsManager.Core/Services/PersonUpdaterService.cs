@@ -1,5 +1,5 @@
-﻿using CRUDServiceContracts;
-using CRUDServices.Helper;
+﻿using ServiceContracts;
+using Services.Helper;
 using DTO;
 using Entities;
 using Exceptions;
@@ -7,7 +7,7 @@ using Microsoft.Extensions.Logging;
 using RepositoryContracts;
 using Serilog;
 
-namespace CRUDServices
+namespace Services
 {
     public class PersonUpdaterService : IPersonUpdaterService
     {

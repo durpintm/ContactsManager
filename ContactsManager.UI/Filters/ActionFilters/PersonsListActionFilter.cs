@@ -1,9 +1,9 @@
-﻿using CRUDExample.Controllers;
+﻿using Controllers;
 using DTO;
 using Enums;
 using Microsoft.AspNetCore.Mvc.Filters;
 
-namespace CRUDExample.Filters.ActionFilters
+namespace Filters.ActionFilters
 {
     public class PersonsListActionFilter : IActionFilter
     {

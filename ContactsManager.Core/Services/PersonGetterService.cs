@@ -1,4 +1,4 @@
-﻿using CRUDServiceContracts;
+﻿using ServiceContracts;
 using DTO;
 using CsvHelper;
 using CsvHelper.Configuration;
@@ -10,7 +10,7 @@ using Serilog;
 using SerilogTimings;
 using System.Globalization;
 
-namespace CRUDServices
+namespace Services
 {
     public class PersonGetterService : IPersonGetterService
     {

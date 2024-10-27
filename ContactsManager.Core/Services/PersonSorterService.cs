@@ -1,11 +1,11 @@
-﻿using CRUDServiceContracts;
+﻿using ServiceContracts;
 using Enums;
 using DTO;
 using Microsoft.Extensions.Logging;
 using RepositoryContracts;
 using Serilog;
 
-namespace CRUDServices
+namespace Services
 {
     public class PersonSorterService : IPersonSorterService
     {

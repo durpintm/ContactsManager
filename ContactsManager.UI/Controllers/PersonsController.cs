@@ -1,17 +1,17 @@
-﻿using CRUDExample.Filters;
-using CRUDExample.Filters.ActionFilters;
-using CRUDExample.Filters.AuthorizationFilters;
-using CRUDExample.Filters.ExceptionFilters;
-using CRUDExample.Filters.ResourceFilters;
-using CRUDExample.Filters.ResultFilters;
-using CRUDServiceContracts;
+﻿using Filters;
+using Filters.ActionFilters;
+using Filters.AuthorizationFilters;
+using Filters.ExceptionFilters;
+using Filters.ResourceFilters;
+using Filters.ResultFilters;
+using ServiceContracts;
 using DTO;
 using Enums;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Rotativa.AspNetCore;
 
-namespace CRUDExample.Controllers
+namespace Controllers
 {
     [Route("[controller]")]
     //[TypeFilter(typeof(ResponseHeaderActionFilter), Arguments = new object[] { "My-Key-From-Controller", "My-Key-From-Controller", 3 }, Order = 3)]

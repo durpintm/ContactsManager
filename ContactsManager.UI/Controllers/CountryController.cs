@@ -1,7 +1,7 @@
-﻿using CRUDServiceContracts;
+﻿using ServiceContracts;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CRUDExample.Controllers
+namespace Controllers
 {
     [Route("[controller]")]
     public class CountryController : Controller

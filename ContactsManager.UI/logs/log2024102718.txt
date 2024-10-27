@@ -1,0 +1,81 @@
+2024-10-27 18:20:56.648 -04:00 [INF] Executed DbCommand (540ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+CREATE DATABASE [ContactsDB];
+2024-10-27 18:20:57.127 -04:00 [INF] Executed DbCommand (306ms) [Parameters=[], CommandType='"Text"', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5
+BEGIN
+    ALTER DATABASE [ContactsDB] SET READ_COMMITTED_SNAPSHOT ON;
+END;
+2024-10-27 18:20:57.145 -04:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-10-27 18:20:57.250 -04:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [__EFMigrationsHistory] (
+    [MigrationId] nvarchar(150) NOT NULL,
+    [ProductVersion] nvarchar(32) NOT NULL,
+    CONSTRAINT [PK___EFMigrationsHistory] PRIMARY KEY ([MigrationId])
+);
+2024-10-27 18:20:57.252 -04:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT 1
+2024-10-27 18:20:57.271 -04:00 [INF] Executed DbCommand (15ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT OBJECT_ID(N'[__EFMigrationsHistory]');
+2024-10-27 18:20:57.277 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2024-10-27 18:20:57.303 -04:00 [INF] Applying migration '20241027222028_Initial'.
+2024-10-27 18:20:57.417 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Countries] (
+    [CountryId] uniqueidentifier NOT NULL,
+    [CountryName] nvarchar(max) NULL,
+    CONSTRAINT [PK_Countries] PRIMARY KEY ([CountryId])
+);
+2024-10-27 18:20:57.422 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [Persons] (
+    [PersonId] uniqueidentifier NOT NULL,
+    [PersonName] nvarchar(50) NULL,
+    [Email] nvarchar(50) NULL,
+    [DateOfBirth] datetime2 NULL,
+    [Gender] nvarchar(10) NULL,
+    [CountryId] uniqueidentifier NULL,
+    [Address] nvarchar(100) NULL,
+    [ReceiveNewsLetters] bit NOT NULL,
+    [TaxIdentificationNumber] varchar(8) NULL DEFAULT 'ABCDEF12',
+    CONSTRAINT [PK_Persons] PRIMARY KEY ([PersonId]),
+    CONSTRAINT [CHK_TaxIdentificationNumber] CHECK (len([TaxIdentificationNumber]) = 8),
+    CONSTRAINT [FK_Persons_Countries_CountryId] FOREIGN KEY ([CountryId]) REFERENCES [Countries] ([CountryId])
+);
+2024-10-27 18:20:57.460 -04:00 [INF] Executed DbCommand (38ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'CountryId', N'CountryName') AND [object_id] = OBJECT_ID(N'[Countries]'))
+    SET IDENTITY_INSERT [Countries] ON;
+INSERT INTO [Countries] ([CountryId], [CountryName])
+VALUES ('12e15727-d369-49a9-8b13-bc22e9362179', N'China'),
+('14629847-905a-4a0e-9abe-80b61655c5cb', N'Philippines'),
+('501c6d33-1bbe-45f1-8fbd-2275913c6218', N'China'),
+('56bf46a4-02b8-4693-a0f5-0a95e2218bdc', N'Thailand'),
+('8f30bedc-47dd-4286-8950-73d8a68e5d41', N'Palestinian Territory');
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'CountryId', N'CountryName') AND [object_id] = OBJECT_ID(N'[Countries]'))
+    SET IDENTITY_INSERT [Countries] OFF;
+2024-10-27 18:20:57.487 -04:00 [INF] Executed DbCommand (26ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'PersonId', N'Address', N'CountryId', N'DateOfBirth', N'Email', N'Gender', N'PersonName', N'ReceiveNewsLetters') AND [object_id] = OBJECT_ID(N'[Persons]'))
+    SET IDENTITY_INSERT [Persons] ON;
+INSERT INTO [Persons] ([PersonId], [Address], [CountryId], [DateOfBirth], [Email], [Gender], [PersonName], [ReceiveNewsLetters])
+VALUES ('012107df-862f-4f16-ba94-e5c16886f005', N'413 Sachtjen Way', '12e15727-d369-49a9-8b13-bc22e9362179', '1990-09-20T00:00:00.0000000', N'hmosco8@tripod.com', N'Male', N'Hansiain', CAST(1 AS bit)),
+('28d11936-9466-4a4b-b9c5-2f0a8e0cbde9', N'2 Warrior Avenue', '501c6d33-1bbe-45f1-8fbd-2275913c6218', '1990-05-24T00:00:00.0000000', N'mconachya@va.gov', N'Female', N'Minta', CAST(1 AS bit)),
+('29339209-63f5-492f-8459-754943c74abf', N'57449 Brown Way', '12e15727-d369-49a9-8b13-bc22e9362179', '1983-02-16T00:00:00.0000000', N'mjarrell6@wisc.edu', N'Male', N'Maddy', CAST(1 AS bit)),
+('2a6d3738-9def-43ac-9279-0310edc7ceca', N'97570 Raven Circle', '8f30bedc-47dd-4286-8950-73d8a68e5d41', '1988-01-04T00:00:00.0000000', N'mlingfoot5@netvibes.com', N'Male', N'Mitchael', CAST(0 AS bit)),
+('89e5f445-d89f-4e12-94e0-5ad5b235d704', N'50467 Holy Cross Crossing', '56bf46a4-02b8-4693-a0f5-0a95e2218bdc', '1995-02-11T00:00:00.0000000', N'ttregona4@stumbleupon.com', N'Gender', N'Tani', CAST(0 AS bit)),
+('a3b9833b-8a4d-43e9-8690-61e08df81a9a', N'9334 Fremont Street', '501c6d33-1bbe-45f1-8fbd-2275913c6218', '1987-01-19T00:00:00.0000000', N'vklussb@nationalgeographic.com', N'Female', N'Verene', CAST(1 AS bit)),
+('ac660a73-b0b7-4340-abc1-a914257a6189', N'4 Stuart Drive', '12e15727-d369-49a9-8b13-bc22e9362179', '1998-12-02T00:00:00.0000000', N'pretchford7@virginia.edu', N'Female', N'Pegeen', CAST(1 AS bit)),
+('c03bbe45-9aeb-4d24-99e0-4743016ffce9', N'4 Parkside Point', '56bf46a4-02b8-4693-a0f5-0a95e2218bdc', '1989-08-28T00:00:00.0000000', N'mwebsdale0@people.com.cn', N'Female', N'Marguerite', CAST(0 AS bit)),
+('c3abddbd-cf50-41d2-b6c4-cc7d5a750928', N'6 Morningstar Circle', '14629847-905a-4a0e-9abe-80b61655c5cb', '1990-10-05T00:00:00.0000000', N'ushears1@globo.com', N'Female', N'Ursa', CAST(0 AS bit)),
+('c6d50a47-f7e6-4482-8be0-4ddfc057fa6e', N'73 Heath Avenue', '14629847-905a-4a0e-9abe-80b61655c5cb', '1995-02-10T00:00:00.0000000', N'fbowsher2@howstuffworks.com', N'Male', N'Franchot', CAST(1 AS bit)),
+('cb035f22-e7cf-4907-bd07-91cfee5240f3', N'484 Clarendon Court', '8f30bedc-47dd-4286-8950-73d8a68e5d41', '1997-09-25T00:00:00.0000000', N'lwoodwing9@wix.com', N'Male', N'Lombard', CAST(0 AS bit)),
+('d15c6d9f-70b4-48c5-afd3-e71261f1a9be', N'83187 Merry Drive', '12e15727-d369-49a9-8b13-bc22e9362179', '1987-01-09T00:00:00.0000000', N'asarvar3@dropbox.com', N'Male', N'Angie', CAST(1 AS bit));
+IF EXISTS (SELECT * FROM [sys].[identity_columns] WHERE [name] IN (N'PersonId', N'Address', N'CountryId', N'DateOfBirth', N'Email', N'Gender', N'PersonName', N'ReceiveNewsLetters') AND [object_id] = OBJECT_ID(N'[Persons]'))
+    SET IDENTITY_INSERT [Persons] OFF;
+2024-10-27 18:20:58.305 -04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX [IX_Persons_CountryId] ON [Persons] ([CountryId]);
+2024-10-27 18:20:58.308 -04:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
+VALUES (N'20241027222028_Initial', N'8.0.10');
+2024-10-27 18:37:23.835 -04:00 [INF] User profile is available. Using 'C:\Users\nipru\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-27 18:37:24.333 -04:00 [INF] Now listening on: http://localhost:5044

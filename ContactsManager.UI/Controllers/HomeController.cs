@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CRUDExample.Controllers
+namespace Controllers
 {
     public class HomeController : Controller
     {

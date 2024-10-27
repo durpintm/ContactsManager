@@ -1,10 +1,10 @@
-﻿using CRUDServiceContracts;
+﻿using ServiceContracts;
 using Entities;
 using Microsoft.Extensions.Logging;
 using RepositoryContracts;
 using Serilog;
 
-namespace CRUDServices
+namespace Services
 {
     public class PersonDeleterService : IPersonDeleterService
     {

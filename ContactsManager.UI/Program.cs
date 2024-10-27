@@ -1,15 +1,7 @@
-using CRUDServiceContracts;
-using CRUDServices;
-using Entities;
-using Microsoft.EntityFrameworkCore;
-using Repositories;
-using RepositoryContracts;
+using Middleware;
 using Rotativa.AspNetCore;
-using Microsoft.AspNetCore.HttpLogging;
 using Serilog;
-using CRUDExample.Filters.ActionFilters;
-using CRUDExample;
-using CRUDExample.Middleware;
+using ServicesExtensions;
 
 var builder = WebApplication.CreateBuilder(args);
 

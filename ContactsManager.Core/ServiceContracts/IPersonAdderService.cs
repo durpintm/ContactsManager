@@ -1,6 +1,6 @@
 ﻿using DTO;
 
-namespace CRUDServiceContracts
+namespace ServiceContracts
 {
     /// <summary>
     /// Represents business logic for manipulating Person entity

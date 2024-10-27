@@ -4,7 +4,7 @@ using OfficeOpenXml;
 using RepositoryContracts;
 using Serilog;
 
-namespace CRUDServices
+namespace Services
 {
     public class PersonGetterServiceChild : PersonGetterService
     {

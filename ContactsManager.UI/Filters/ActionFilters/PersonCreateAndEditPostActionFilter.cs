@@ -1,10 +1,10 @@
-﻿using CRUDExample.Controllers;
-using CRUDServiceContracts;
+﻿using Controllers;
+using ServiceContracts;
 using DTO;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
-namespace CRUDExample.Filters.ActionFilters
+namespace Filters.ActionFilters
 {
     public class PersonCreateAndEditPostActionFilter : IAsyncActionFilter
     {
