@@ -1,5 +1,5 @@
 ﻿using DTO;
-using CRUDServiceContracts.Enums;
+using Enums;
 
 namespace CRUDServiceContracts
 {

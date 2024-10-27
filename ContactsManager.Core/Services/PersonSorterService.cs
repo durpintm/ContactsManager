@@ -1,5 +1,5 @@
 ﻿using CRUDServiceContracts;
-using CRUDServiceContracts.Enums;
+using Enums;
 using DTO;
 using Microsoft.Extensions.Logging;
 using RepositoryContracts;

@@ -1,4 +1,4 @@
-﻿using CRUDServiceContracts.Enums;
+﻿using Enums;
 using Entities;
 
 namespace DTO
