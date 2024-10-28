@@ -51,11 +51,29 @@ app.UseSerilogRequestLogging();
 app.UseHttpLogging();
 
 app.UseStaticFiles();
+
 app.UseRouting(); // Identifying action method based on url route
+
 app.UseAuthentication(); // Reading Identity Cookie from the browser
 app.UseAuthorization(); // Validates access permissions of the user
-app.MapControllers(); // Execute the filter pipeline (action + filters)
+//app.MapControllers(); // Execute the filter pipeline (action + filters)
 
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllerRoute(
+//        name: "default",
+//        pattern: "{controller}/{action}/{id?}"
+//        );
+//});
+
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapControllerRoute(
+//        name: "default",
+//        pattern: "{controller}/{action}/{id?}");
+//});
+
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}");
 app.Run();
 
 
