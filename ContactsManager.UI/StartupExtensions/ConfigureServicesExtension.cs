@@ -53,7 +53,16 @@ namespace ServicesExtensions
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddIdentity<ApplicationUser, ApplicationRole>().AddEntityFrameworkStores<ApplicationDbContext>()
+            services.AddIdentity<ApplicationUser, ApplicationRole>(options =>
+            {
+                options.Password.RequiredLength = 8;
+                options.Password.RequireNonAlphanumeric = true;
+                options.Password.RequireUppercase = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireDigit = true;
+                options.Password.RequiredUniqueChars = 4;
+            })
+                .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders()
                 .AddUserStore<UserStore<ApplicationUser, ApplicationRole, ApplicationDbContext, Guid>>()
                 .AddRoleStore<RoleStore<ApplicationRole, ApplicationDbContext, Guid>>();
