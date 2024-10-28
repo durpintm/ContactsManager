@@ -1,5 +1,6 @@
 ﻿using ContactsManager.Core.Domain.IdentityEntities;
 using ContactsManager.Core.DTO;
+using ContactsManager.Core.Enums;
 using Controllers;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -12,12 +13,14 @@ namespace ContactsManager.UI.Controllers
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly RoleManager<ApplicationRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
 
-        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager)
+        public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, RoleManager<ApplicationRole> roleManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _roleManager = roleManager;
 
         }
 
@@ -49,6 +52,22 @@ namespace ContactsManager.UI.Controllers
 
             if (result.Succeeded)
             {
+                // Check status of radio button
+                if (registerDTO.UserType == UserTypeOptions.Admin)
+                {
+                    if (await _roleManager.FindByNameAsync(UserTypeOptions.Admin.ToString()) is null)
+                    {
+                        ApplicationRole applicationRole = new ApplicationRole() { Name = UserTypeOptions.Admin.ToString() };
+                        await _roleManager.CreateAsync(applicationRole);
+                    }
+
+                    await _userManager.AddToRoleAsync(applicationUser, UserTypeOptions.Admin.ToString());
+                }
+                else
+                {
+                    await _userManager.AddToRoleAsync(applicationUser, UserTypeOptions.User.ToString());
+                }
+
                 // Sign In
                 await _signInManager.SignInAsync(applicationUser, false);
 
