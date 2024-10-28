@@ -51,8 +51,9 @@ app.UseSerilogRequestLogging();
 app.UseHttpLogging();
 
 app.UseStaticFiles();
-app.UseAuthentication(); // Reading Identity Cookie from the browser
 app.UseRouting(); // Identifying action method based on url route
+app.UseAuthentication(); // Reading Identity Cookie from the browser
+app.UseAuthorization(); // Validates access permissions of the user
 app.MapControllers(); // Execute the filter pipeline (action + filters)
 
 app.Run();
