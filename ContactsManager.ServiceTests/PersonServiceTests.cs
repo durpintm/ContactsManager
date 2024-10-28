@@ -408,7 +408,7 @@ namespace CRUDTests
         public async Task UpdatePerson_NullPerson_ToBeArgumentNullException()
         {
             // Arrange
-            PersonUpdateRequest? person_update_request = null;
+            PersonUpdateRequest? person_update_request = null!;
 
             Func<Task> action = async () =>
             {

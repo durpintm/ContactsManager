@@ -1,15 +1,17 @@
-﻿using Entities;
+﻿using ContactsManager.Core.Domain.IdentityEntities;
+using Entities;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json;
 
 namespace DatabaseContext
 {
-    public class ApplicationDbContext : DbContext
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, Guid>
     {
         public ApplicationDbContext(DbContextOptions options) : base(options)
         {
-        }
+        } 
         public virtual DbSet<Country> Countries { get; set; }
         public virtual DbSet<Person> Persons { get; set; }
 
@@ -54,7 +56,9 @@ namespace DatabaseContext
 
             //modelBuilder.Entity<Person>().HasIndex(temp => temp.TIN).IsUnique();
 
-            modelBuilder.Entity<Person>().HasCheckConstraint("CHK_TaxIdentificationNumber", "len([TaxIdentificationNumber]) = 8");
+            //modelBuilder.Entity<Person>().HasCheckConstraint("CHK_TaxIdentificationNumber", "len([TaxIdentificationNumber]) = 8");
+
+            modelBuilder.Entity<Person>().ToTable(t => t.HasCheckConstraint("CHK_TaxIdentificationNumber", "len([TaxIdentificationNumber]) = 8"));
 
             // Table Relations
             //modelBuilder.Entity<Person>(entity =>

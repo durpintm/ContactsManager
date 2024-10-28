@@ -53,7 +53,7 @@ namespace Controllers
 
             _logger.LogDebug($"SearchBy: {searchBy}, SearchString: {searchString}, SortBy: {sortBy}, SortOrder: {sortOrder}");
 
-            List<PersonResponse> people = await _personGetterService.GetFilteredPersons(searchBy, searchString);
+            List<PersonResponse> people = await _personGetterService.GetFilteredPersons(searchBy, searchString ?? "");
             //ViewBag.CurrentSearchBy = searchBy;
             //ViewBag.CurrentSearchString = searchString;
 
