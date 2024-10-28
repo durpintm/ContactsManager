@@ -1,0 +1,71 @@
+2024-10-28 15:03:01.921 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-28 15:03:01.936 -04:00 [INF] Hosting environment: Development
+2024-10-28 15:03:01.946 -04:00 [INF] Content root path: C:\Users\nipru\source\repos\ContactsManagerSolution\ContactsManager.UI
+2024-10-28 15:04:48.534 -04:00 [INF] User profile is available. Using 'C:\Users\nipru\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-28 15:04:48.856 -04:00 [INF] Now listening on: http://localhost:5044
+2024-10-28 15:04:50.868 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-28 15:04:50.975 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 123.1406ms
+2024-10-28 15:04:52.088 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_vs/browserLink - null null
+2024-10-28 15:04:52.167 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.5661ms
+2024-10-28 15:04:54.125 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/Country/UploadFromExcel - null null
+2024-10-28 15:04:54.174 -04:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Country/UploadFromExcel
+2024-10-28 15:04:54.246 -04:00 [INF] Executing endpoint 'Controllers.CountryController.UploadFromExcel (ContactsManager.UI)'
+2024-10-28 15:04:54.332 -04:00 [INF] Route matched with {action = "UploadFromExcel", controller = "Country"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult UploadFromExcel() on controller Controllers.CountryController (ContactsManager.UI).
+2024-10-28 15:04:54.723 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - before
+2024-10-28 15:04:54.738 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - after
+2024-10-28 15:04:54.761 -04:00 [INF] Executing ViewResult, running view UploadFromExcel.
+2024-10-28 15:04:55.175 -04:00 [INF] Executed ViewResult - view UploadFromExcel executed in 420.9188ms.
+2024-10-28 15:04:55.182 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-28 15:04:55.183 -04:00 [INF] Executed action Controllers.CountryController.UploadFromExcel (ContactsManager.UI) in 840.856ms
+2024-10-28 15:04:55.198 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 15.5046ms
+2024-10-28 15:04:55.205 -04:00 [INF] Executed endpoint 'Controllers.CountryController.UploadFromExcel (ContactsManager.UI)'
+2024-10-28 15:04:55.182 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_vs/browserLink - null null
+2024-10-28 15:04:55.217 -04:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Mon, 28 Oct 2024 19:04:54 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Set-Cookie: [Redacted]
+Transfer-Encoding: chunked
+My-Key-From-Global: [Redacted]
+X-Frame-Options: [Redacted]
+2024-10-28 15:04:55.229 -04:00 [INF] HTTP GET /Country/UploadFromExcel responded 200 in 1058.4123 ms
+2024-10-28 15:04:55.243 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_vs/browserLink - 200 null text/javascript; charset=UTF-8 60.3489ms
+2024-10-28 15:04:55.245 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/Country/UploadFromExcel - 200 null text/html; charset=utf-8 1119.7302ms
+2024-10-28 15:04:57.101 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/Account/Register - null null
+2024-10-28 15:04:57.110 -04:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /Account/Register
+2024-10-28 15:04:57.119 -04:00 [INF] Executing endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2024-10-28 15:04:57.128 -04:00 [INF] Route matched with {action = "Register", controller = "Account"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Register() on controller ContactsManager.UI.Controllers.AccountController (ContactsManager.UI).
+2024-10-28 15:04:57.189 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - before
+2024-10-28 15:04:59.101 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - after
+2024-10-28 15:04:59.106 -04:00 [INF] Executing ViewResult, running view Register.
+2024-10-28 15:04:59.242 -04:00 [INF] Executed ViewResult - view Register executed in 138.4548ms.
+2024-10-28 15:04:59.281 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-28 15:04:59.287 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_vs/browserLink - null null
+2024-10-28 15:04:59.321 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 40.558ms
+2024-10-28 15:04:59.317 -04:00 [INF] Executed action ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI) in 2182.8821ms
+2024-10-28 15:04:59.396 -04:00 [INF] Executed endpoint 'ContactsManager.UI.Controllers.AccountController.Register (ContactsManager.UI)'
+2024-10-28 15:04:59.401 -04:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Mon, 28 Oct 2024 19:04:59 GMT
+Server: Kestrel
+Cache-Control: [Redacted]
+Pragma: [Redacted]
+Transfer-Encoding: chunked
+My-Key-From-Global: [Redacted]
+2024-10-28 15:04:59.419 -04:00 [INF] HTTP GET /Account/Register responded 200 in 2309.7527 ms
+2024-10-28 15:04:59.459 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_vs/browserLink - 200 null text/javascript; charset=UTF-8 172.9714ms
+2024-10-28 15:04:59.472 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/Account/Register - 200 null text/html; charset=utf-8 2370.5771ms

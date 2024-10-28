@@ -1,0 +1,50 @@
+2024-10-28 14:24:26.198 -04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-10-28 14:24:26.207 -04:00 [INF] Hosting environment: Development
+2024-10-28 14:24:26.210 -04:00 [INF] Content root path: C:\Users\nipru\source\repos\ContactsManagerSolution\ContactsManager.UI
+2024-10-28 14:52:45.802 -04:00 [INF] User profile is available. Using 'C:\Users\nipru\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-10-28 14:52:46.179 -04:00 [INF] Now listening on: http://localhost:5044
+2024-10-28 14:52:49.611 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/ - null null
+2024-10-28 14:52:49.687 -04:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /
+2024-10-28 14:52:49.745 -04:00 [INF] Executing endpoint 'Controllers.PersonsController.Index (ContactsManager.UI)'
+2024-10-28 14:52:49.854 -04:00 [INF] Route matched with {action = "Index", controller = "Persons"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Index(System.String, System.String, System.String, Enums.SortOrderOptions) on controller Controllers.PersonsController (ContactsManager.UI).
+2024-10-28 14:52:50.334 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - before
+2024-10-28 14:52:50.337 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - before
+2024-10-28 14:52:50.341 -04:00 [INF] PersonsListActionFilter.OnActionExecuting
+2024-10-28 14:52:50.346 -04:00 [INF] Index action method of PersonsController
+2024-10-28 14:52:50.355 -04:00 [INF] GetFilteredPersons of PersonService
+2024-10-28 14:52:53.387 -04:00 [INF] Executed DbCommand (59ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[PersonId], [p].[Address], [p].[CountryId], [p].[DateOfBirth], [p].[Email], [p].[Gender], [p].[PersonName], [p].[ReceiveNewsLetters], [p].[TaxIdentificationNumber], [c].[CountryId], [c].[CountryName]
+FROM [Persons] AS [p]
+LEFT JOIN [Countries] AS [c] ON [p].[CountryId] = [c].[CountryId]
+2024-10-28 14:52:53.677 -04:00 [INF] Time for Filtered Persons from Database completed in 3317.9 ms
+2024-10-28 14:52:53.728 -04:00 [INF] GetSortedPersons of PersonService
+2024-10-28 14:52:53.739 -04:00 [INF] Index action method completed of PersonsController
+2024-10-28 14:52:53.778 -04:00 [INF] PersonsListActionFilter.OnActionExecuted
+2024-10-28 14:52:53.883 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - after
+2024-10-28 14:52:53.891 -04:00 [INF] ResponseHeaderActionFilter.OnActionExecutionAsync method - after
+2024-10-28 14:52:53.905 -04:00 [INF] PersonsListResultFilter.OnResultExecutionAsync - before
+2024-10-28 14:52:53.934 -04:00 [INF] Executing ViewResult, running view Index.
+2024-10-28 14:52:54.419 -04:00 [INF] Executed ViewResult - view Index executed in 491.7813ms.
+2024-10-28 14:52:54.426 -04:00 [INF] PersonsListResultFilter.OnResultExecutionAsync - after
+2024-10-28 14:52:54.430 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - null null
+2024-10-28 14:52:54.444 -04:00 [INF] Executed action Controllers.PersonsController.Index (ContactsManager.UI) in 4580.3756ms
+2024-10-28 14:52:54.451 -04:00 [INF] Executed endpoint 'Controllers.PersonsController.Index (ContactsManager.UI)'
+2024-10-28 14:52:54.455 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_framework/aspnetcore-browser-refresh.js - 200 13772 application/javascript; charset=utf-8 24.0446ms
+2024-10-28 14:52:54.463 -04:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/html; charset=utf-8
+Date: Mon, 28 Oct 2024 18:52:54 GMT
+Server: Kestrel
+Last-Modified: 2024-10-28 14:52
+Transfer-Encoding: chunked
+My-Key-From-Global: [Redacted]
+My-Key-From-Action: [Redacted]
+2024-10-28 14:52:54.475 -04:00 [INF] HTTP GET / responded 200 in 4797.1457 ms
+2024-10-28 14:52:54.501 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/ - 200 null text/html; charset=utf-8 4897.6504ms
+2024-10-28 14:52:54.531 -04:00 [INF] Request starting HTTP/1.1 GET http://localhost:5044/_vs/browserLink - null null
+2024-10-28 14:52:54.610 -04:00 [INF] Request finished HTTP/1.1 GET http://localhost:5044/_vs/browserLink - 200 null text/javascript; charset=UTF-8 79.4188ms
