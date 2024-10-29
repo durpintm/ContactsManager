@@ -10,6 +10,7 @@ using ContactsManager.Core.Domain.IdentityEntities;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ServicesExtensions
 {
@@ -29,6 +30,8 @@ namespace ServicesExtensions
                 //options.Filters.Add(new ResponseHeaderActionFilter(logger, "My-Key-From-Global", "My-Value-From-Global", 2));
 
                 options.Filters.Add(new ResponseHeaderActionFilter(logger) { Key = "My-Key-From-Global", Value = "My-Value-From-Global", Order = 2 });
+
+                options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute());
             });
 
             // Add services into IoC container
