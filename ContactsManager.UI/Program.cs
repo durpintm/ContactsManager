@@ -45,6 +45,9 @@ if (builder.Environment.IsEnvironment("Test") == false)
 
 //app.UseStatusCodePagesWithRedirects("/{0}");
 
+app.UseHsts();
+app.UseHttpsRedirection();
+
 app.UseSerilogRequestLogging();
 
 // Http logging
